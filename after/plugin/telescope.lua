@@ -1,12 +1,43 @@
 local builtin = require('telescope.builtin')
 
+require('telescope').setup {
+    defaults = {
+        mappings = {
+            i = {
+                ["<C-j>"] = require('telescope.actions').move_selection_next,
+                ["<C-k>"] = require('telescope.actions').move_selection_previous,
+            },
+            n = {
+                ["<C-j>"] = require('telescope.actions').move_selection_next,
+                ["<C-k>"] = require('telescope.actions').move_selection_previous,
+            },
+        },
+        set_env = { ['COLORTERM'] = 'truecolor' }, -- Needed for proper highlight rendering
+        winblend = 0,                              -- Transparency of floating window
+        layout_config = {
+            horizontal = { prompt_position = 'top' },
+            vertical = { mirror = false },
+        },
+        sorting_strategy = 'ascending',
+        color_devicons = true,
+    },
+}
+
 --find in file directory
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-vim.api.nvim_set_keymap('n', '<leader>fs', ':Telescope live_grep<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>fw', builtin.current_buffer_fuzzy_find, {})
-
+vim.api.nvim_set_keymap('n', '<leader>fa', ':Telescope live_grep<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>fs', function()
+    builtin.current_buffer_fuzzy_find({
+        theme = "dropdown", -- Change to "ivy" or "cursor" if needed
+        previewer = false,  -- Disable previewer if not needed
+        layout_config = {
+            width = 0.5,    -- Adjust the width of the window (value between 0 and 1)
+            height = 0.5,   -- Adjust the height of the window (value between 0 and 1)
+      },
+    })
+end)
 vim.keymap.set('n', '<leader>fx', builtin.grep_string, {})
 
 --find git git_files
