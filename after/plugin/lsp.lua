@@ -1,5 +1,20 @@
+-- to learn how to use mason.nvim read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guide/integrate-with-mason-nvim.md
+require('mason').setup({})
+require('mason-lspconfig').setup({
+    ensure_installed = {
+        'tsserver',
+        'eslint',
+        'lua_ls',
+    },
+    handlers = {
+        function(server_name)
+            require('lspconfig')[server_name].setup({})
+        end,
+    },
+})
 local lsp = require('lsp-zero')
 local cmp = require('cmp')
+local luasnip = require('luasnip')
 
 lsp.preset('recommended')
 
@@ -12,34 +27,17 @@ local cmp_select = {behavior = cmp.SelectBehavior.Select}
 cmp.setup({
 	snippet = {
 		expand = function(args)
-			require('luasnip').snippet_expand(args.body)
+			luasnip.lsp_expand(args.body)
 		end,
 	},
 	mapping = lsp.defaults.cmp_mappings({
-		['<leader>k'] = cmp.mapping.select_prev_item(cmp_select),
-		['<leader>j'] = cmp.mapping.select_next_item(cmp_select),
+		['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
+		['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
 		['<CR>'] = cmp.mapping.confirm({ select = true }),
 		['<C-Space>'] = cmp.mapping.complete(),
 	}),
 })
 
-
-
-
--- to learn how to use mason.nvim
--- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guide/integrate-with-mason-nvim.md
-require('mason').setup({})
-require('mason-lspconfig').setup({
-  ensure_installed = {
-	'tsserver',
-	'eslint',
-  },
-  handlers = {
-    function(server_name)
-      require('lspconfig')[server_name].setup({})
-    end,
-  },
-})
 
 lsp.on_attach(function(client, bufnr)
 	local opts = {buffer = bufnr, remap = false }
