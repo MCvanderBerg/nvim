@@ -38,4 +38,10 @@ return require('packer').startup(function(use)
             { 'L3MON4D3/LuaSnip' },
         }
     }
+    use {
+        'vim-airline/vim-airline'
+    }
+    use {
+        'vim-airline/vim-airline-themes'
+    }
 end)
