@@ -35,7 +35,7 @@ vim.keymap.set('n', '<leader>fs', function()
         layout_config = {
             width = 0.5,    -- Adjust the width of the window (value between 0 and 1)
             height = 0.5,   -- Adjust the height of the window (value between 0 and 1)
-      },
+        },
     })
 end)
 vim.keymap.set('n', '<leader>fx', builtin.grep_string, {})
@@ -43,3 +43,7 @@ vim.keymap.set('n', '<leader>fx', builtin.grep_string, {})
 --find git git_files
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
+--vim.keymap.set('n', '<leader>gs', builtin.git_stash, {})
+vim.keymap.set('n', '<leader><leader>gc', builtin.git_status, {})
+vim.keymap.set('n', '<leader><leader>gl', builtin.git_bcommits, {})
+vim.keymap.set('n', '<leader>gl', builtin.git_commits, {})

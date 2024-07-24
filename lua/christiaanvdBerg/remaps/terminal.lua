@@ -1,6 +1,3 @@
-require("christiaanvdBerg.remaps.terminal")
-
-vim.g.mapleader = " "
 -- Function to open terminal at the bottom or move to existing terminal
 local function toggle_terminal(split)
     -- Get list of open windows
@@ -46,50 +43,3 @@ vim.keymap.set('t', '<leader>t', [[<C-\><C-n>:lua send_exit_to_terminal()<CR>]],
 
 vim.keymap.set("n", "<leader>tl", function() toggle_terminal("horizontal") end)
 vim.keymap.set('t', '<leader>t', [[<C-\><C-n>:lua send_exit_to_terminal()<CR>]], { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-k>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
-
--- currently not working, vim-with-me not installed
-vim.keymap.set("n", "<leader>vwm", function()
-    require("vim-with-me").StartVimWithMe()
-end)
-
-vim.keymap.set("n", "<leader>swm", function()
-    require("vim-with-me").StopVimWithMe()
-end)
-
-vim.keymap.set("n", "<leader>p", "\"_dP")
-
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+Y")
-
-
-vim.keymap.set("n", "<leader>d", "\"+d")
-vim.keymap.set("v", "<leader>d", "\"+d")
-
-vim.keymap.set("i", "<C-c>", function()
-    vim.lsp.buf.format()
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", true)
-end)
-
-vim.api.nvim_set_keymap('i', '<S-Tab>', '<C-d>', { noremap = true, silent = true })
-
-vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-
-vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
---My personal keymaps
-vim.keymap.set("n", "<leader>h", "<C-w>h")
-vim.keymap.set("n", "<leader>l", "<C-w>l")
-vim.keymap.set("n", "<leader>j", "<C-w>j")
-vim.keymap.set("n", "<leader>k", "<C-w>k")
