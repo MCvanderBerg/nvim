@@ -1,8 +1,8 @@
 -- Set cursor shapes for different modes
 vim.opt.guicursor = {
-  "n-v-c:block",        -- Normal, Visual, and Command modes: block cursor
-  "i-ci-ve:ver25",      -- Insert mode: vertical bar cursor (25% width)
-  "r-cr-o:hor20"        -- Replace mode and scrolling: horizontal bar cursor (20% height)
+  "n-v-c:block",   -- Normal, Visual, and Command modes: block cursor
+  "i-ci-ve:ver25", -- Insert mode: vertical bar cursor (25% width)
+  "r-cr-o:hor20"   -- Replace mode and scrolling: horizontal bar cursor (20% height)
 }
 
 
@@ -36,3 +36,4 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 vim.g.mapleader = " "
 
+vim.api.nvim_buf_set_option(0, 'modifiable', true)

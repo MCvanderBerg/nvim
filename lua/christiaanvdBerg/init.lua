@@ -1,2 +1,2 @@
-require("christiaanvdBerg.remap")
+require("christiaanvdBerg.remaps")
 require("christiaanvdBerg.set")
