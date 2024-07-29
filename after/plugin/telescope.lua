@@ -24,7 +24,10 @@ require('telescope').setup {
 }
 
 --find in file directory
-vim.keymap.set('n', '<leader>O', builtin.find_files, {})
+vim.keymap.set('n', '<leader>O', function()
+  builtin.find_files()
+end
+, {})
 vim.keymap.set('n', '<leader>o', builtin.buffers, {})
 vim.api.nvim_set_keymap('n', '<leader>F', ':Telescope live_grep<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>f', function()
