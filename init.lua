@@ -12,3 +12,5 @@ vim.g["airline#extensions#bufferline#buffers#tabline"] = 1
 -- Additional Airline settings
 vim.g.airline_powerline_fonts = 1 -- Use powerline fonts for a better appearance
 vim.g.airline_theme = 'dark'      -- Set the theme (adjust as necessary)
+
+

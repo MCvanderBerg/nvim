@@ -54,4 +54,6 @@ return require('packer').startup(function(use)
       require("telescope").load_extension("lazygit")
     end,
   })
+  use("nvim-tree/nvim-tree.lua")
+use("nvim-tree/nvim-web-devicons")
 end)
