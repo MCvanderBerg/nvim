@@ -79,6 +79,7 @@ vim.keymap.set("v", "<leader>d", "\"+d")
 vim.keymap.set("i", "<C-c>", function()
   vim.lsp.buf.format()
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", true)
+  vim.cmd("w")
 end)
 
 vim.api.nvim_set_keymap('i', '<S-Tab>', '<C-d>', { noremap = true, silent = true })

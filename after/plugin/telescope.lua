@@ -23,6 +23,8 @@ require('telescope').setup {
   },
 }
 
+
+
 --find in file directory
 vim.keymap.set('n', '<leader>O', function()
   builtin.find_files()
