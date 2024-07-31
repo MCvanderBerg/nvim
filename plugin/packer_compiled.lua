@@ -79,10 +79,30 @@ _G.packer_plugins = {
     path = "/Users/christiaanvanderberg/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/Users/christiaanvanderberg/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "/Users/christiaanvanderberg/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/Users/christiaanvanderberg/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/Users/christiaanvanderberg/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/Users/christiaanvanderberg/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["dashboard-nvim"] = {
     config = { "\27LJ\2\nJ\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\ntheme\nhyper\nsetup\14dashboard\frequire\0" },
@@ -123,6 +143,19 @@ _G.packer_plugins = {
     path = "/Users/christiaanvanderberg/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["noice.nvim"] = {
+    config = { "\27LJ\2\nï\24\0\0\t\0j\0ö\0016\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\23\0005\3\3\0004\4\0\0=\4\4\0035\4\6\0005\5\5\0=\5\a\0045\5\b\0=\5\t\0045\5\n\0=\5\v\0045\5\f\0=\5\r\0045\5\15\0005\6\14\0=\6\16\5=\5\17\0045\5\18\0=\5\19\0045\5\20\0=\5\21\4=\4\22\3=\3\a\0025\3\24\0=\3\25\0025\3\26\0004\4\0\0=\4\27\3=\3\28\0025\3\29\0005\4\30\0=\4\r\3=\3\31\0025\3+\0005\4 \0005\5!\0=\5\4\0045\5)\0004\6\6\0005\a\"\0>\a\1\0065\a#\0>\a\2\0065\a$\0>\a\3\0065\a%\0005\b&\0=\b'\a>\a\4\0065\a(\0>\a\5\6=\6*\5=\5\r\4=\4,\0035\4-\0005\5.\0=\5\4\0045\0055\0004\6\6\0005\a/\0>\a\1\0065\a0\0>\a\2\0065\a1\0>\a\3\0065\a2\0005\b3\0=\b'\a>\a\4\0065\a4\0>\a\5\6=\6*\5=\5\r\0045\0056\0=\0057\4=\0048\0035\0049\0005\5:\0=\5\4\0045\5;\0=\5\r\0045\5<\0=\0057\4=\4=\0035\4>\0005\5?\0=\5\4\0044\5\0\0=\5\r\4=\4@\3=\3A\0025\3B\0=\3C\0025\3E\0005\4D\0=\4F\0035\4G\0=\4H\0035\4I\0004\5\0\0=\5\4\4=\4J\0035\4K\0005\5L\0=\5M\0044\5\0\0=\5\4\4=\4N\0035\4O\0004\5\0\0=\5\4\4=\4P\0035\4Q\0005\5R\0005\6S\0=\6\22\0055\6T\0=\6U\5=\5\4\4=\4V\3=\3W\0025\3_\0005\4Z\0006\5X\0009\5Y\0059\5\19\5=\5[\0046\5\0\0'\a\\\0B\5\2\0029\5]\5=\5^\4=\4J\0035\4`\0=\4a\3=\3b\0025\3c\0=\3d\0025\3e\0=\3f\0024\3\0\0=\3g\0024\3\0\0=\3h\0024\3\0\0=\3i\0024\3\0\0=\3\22\2B\0\2\1K\0\1\0\vstatus\vroutes\nviews\fpresets\1\0\5\26long_message_to_split\1\15inc_rename\1\19lsp_doc_border\1\18bottom_search\1\20command_palette\1\vhealth\1\0\1\fchecker\2\rmarkdown\15highlights\1\0\6\n|%S-|\20@text.reference\t@%S+\15@parameter\22^%s*(Parameters:)\16@text.title\18^%s*(Return:)\16@text.title\20^%s*(See also:)\16@text.title\n{%S-}\15@parameter\1\0\2\15highlights\0\nhover\0\20%[.-%]%((%S-)%)\topen\15noice.util\f|(%S-)|\1\0\2\20%[.-%]%((%S-)%)\0\f|(%S-)|\0\bcmd\bvim\blsp\18documentation\16win_options\1\0\2\17conceallevel\3\3\18concealcursor\6n\1\2\0\0\14{message}\1\0\5\16win_options\0\tlang\rmarkdown\freplace\2\vformat\0\vrender\nplain\1\0\2\topts\0\tview\nhover\fmessage\1\0\3\topts\0\fenabled\2\tview\vnotify\14signature\14auto_open\1\0\4\fluasnip\2\rthrottle\0032\fenabled\2\ftrigger\2\1\0\4\14auto_open\0\topts\0\fenabled\2\tview\0\nhover\1\0\4\vsilent\1\topts\0\fenabled\2\tview\0\roverride\1\0\0031vim.lsp.util.convert_input_to_markdown_lines\1\"vim.lsp.util.stylize_markdown\1 cmp.entry.get_documentation\1\rprogress\1\0\6\fmessage\0\18documentation\0\roverride\0\14signature\0\nhover\0\rprogress\0\1\0\5\16format_done\22lsp_progress_done\rthrottle\4´’™’\n™’ÇÇ\4\tview\tmini\vformat\17lsp_progress\fenabled\2\vnotify\1\0\2\fenabled\2\tview\vnotify\rcommands\ball\1\0\2\nenter\2\vformat\fdetails\1\0\3\vfilter\0\topts\0\tview\nsplit\verrors\1\0\1\freverse\2\1\0\1\nerror\2\1\0\2\nenter\2\vformat\fdetails\1\0\4\vfilter\0\16filter_opts\0\topts\0\tview\npopup\tlast\16filter_opts\1\0\1\ncount\3\1\1\0\1\bany\0\1\0\2\tkind\fmessage\nevent\blsp\1\2\0\0\5\1\0\2\tkind\0\nevent\rmsg_show\1\0\1\fwarning\2\1\0\1\nerror\2\1\0\1\nevent\vnotify\1\0\2\nenter\2\vformat\fdetails\1\0\4\vfilter\0\16filter_opts\0\topts\0\tview\npopup\fhistory\1\0\4\ball\0\verrors\0\tlast\0\fhistory\0\bany\1\0\1\bany\0\1\0\2\tkind\fmessage\nevent\blsp\tkind\1\2\0\0\5\1\0\2\tkind\0\nevent\rmsg_show\1\0\1\fwarning\2\1\0\1\nerror\2\1\0\1\nevent\vnotify\1\0\2\nenter\2\vformat\fdetails\1\0\3\vfilter\0\topts\0\tview\nsplit\rredirect\1\0\1\nevent\rmsg_show\1\0\2\vfilter\0\tview\npopup\14popupmenu\15kind_icons\1\0\3\fenabled\2\fbackend\bnui\15kind_icons\0\rmessages\1\0\6\15view_error\vnotify\tview\vnotify\14view_warn\vnotify\17view_history\rmessages\fenabled\2\16view_search\16virtualtext\1\0\15\rthrottle\4´’™’\n™’ÇÇ\4\fcmdline\0\blsp\0\nviews\0\vnotify\0\rcommands\0\vroutes\0\vstatus\0\rmessages\0\fpresets\0\rmarkdown\0\vhealth\0\14popupmenu\0\rredirect\0\vformat\0\vformat\ninput\1\0\2\ticon\nÛ∞•ª \tview\18cmdline_input\thelp\1\0\2\fpattern\20^:%s*he?l?p?%s+\ticon\bÔüï\blua\fpattern\1\0\3\ticon\bÓò†\fpattern\0\tlang\blua\1\4\0\0\16^:%s*lua%s+\20^:%s*lua%s*=%s*\14^:%s*=%s*\vfilter\1\0\3\ticon\6$\fpattern\v^:%s*!\tlang\tbash\14search_up\1\0\4\fpattern\b^%?\ticon\fÔÄÇ ÔÑÇ\tlang\nregex\tkind\vsearch\16search_down\1\0\4\fpattern\a^/\ticon\fÔÄÇ ÔÑÉ\tlang\nregex\tkind\vsearch\fcmdline\1\0\a\16search_down\0\fcmdline\0\thelp\0\14search_up\0\blua\0\ninput\0\vfilter\0\1\0\3\ticon\bÔÅî\fpattern\a^:\tlang\bvim\topts\1\0\4\topts\0\vformat\0\fenabled\2\tview\18cmdline_popup\nsetup\nnoice\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/christiaanvanderberg/.local/share/nvim/site/pack/packer/opt/noice.nvim",
+    url = "https://github.com/folke/noice.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/Users/christiaanvanderberg/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/christiaanvanderberg/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -132,6 +165,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/christiaanvanderberg/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "/Users/christiaanvanderberg/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -210,6 +248,7 @@ vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
 vim.cmd [[au VimEnter * ++once lua require("packer.load")({'dashboard-nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'noice.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 
