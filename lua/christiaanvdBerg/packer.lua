@@ -55,5 +55,15 @@ return require('packer').startup(function(use)
     end,
   })
   use("nvim-tree/nvim-tree.lua")
-use("nvim-tree/nvim-web-devicons")
+  use("nvim-tree/nvim-web-devicons")
+  use {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {
+        theme = 'hyper', --  theme is doom and hyper default is hyper
+      }
+    end,
+    requires = { 'nvim-tree/nvim-web-devicons' }
+  }
 end)
