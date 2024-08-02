@@ -2,11 +2,11 @@ function ColorMyPencils(color)
   color = color or "rose-pine"
   vim.cmd.colorscheme(color)
 
-  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+  vim.api.nvim_set_hl(0, "Normal", { bg = "#1a121c" })
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#0f0e18" })
 
   local Telescope_bg = "#150d17"
-  local Telescope_fg = "none"
+  local Telescope_fg = "#e0def4"
   -- Set Telescope highlights to match Rose Pine theme
   vim.api.nvim_set_hl(0, 'TelescopeBorder', { bg = Telescope_bg, fg = Telescope_fg })
   vim.api.nvim_set_hl(0, 'TelescopePromptBorder', { bg = Telescope_bg, fg = Telescope_fg })
