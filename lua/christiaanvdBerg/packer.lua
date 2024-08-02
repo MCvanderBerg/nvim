@@ -306,6 +306,7 @@ return require('packer').startup(function(use)
         ---@type NoiceFormatOptions
         format = {}, --- @see section on formatting
       })
+      require("telescope").load_extension("noice")
     end
   }
 end)
