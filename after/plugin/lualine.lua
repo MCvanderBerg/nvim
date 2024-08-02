@@ -6,10 +6,9 @@ local timeTillWedding = function()
   local diffSeconds = string.format("%.0f", diff % 60)
   local diffMinutes = string.format("%.0f", (diff / 60) % 60)
   local diffHours = string.format("%.0f", (diff / 3600) % 24)
-  local diffDays = string.format("%.0f", (diff / 86400) % 30)
   local diffMonths = string.format("%.0f", (diff / (30 * 86400)))
-  return " Time to wedding:  " ..
-      diffMonths .. ":" .. diffHours .. ":" .. diffMinutes .. ":" .. diffSeconds
+  local diffDays = string.format("%.0f", (diff / 86400) % 30) + 30 * diffMonths
+  return " Time to wedding:" .. diffDays .. " Days " .. diffHours .. ":" .. diffMinutes .. ":" .. diffSeconds
 end
 
 require('lualine').setup {

@@ -119,10 +119,10 @@ return require('packer').startup(function(use)
             -- opts: any options passed to the view
             -- icon_hl_group: optional hl_group for the icon
             -- title: set to anything or empty string to hide
-            cmdline = { pattern = "^:", icon = "", lang = "vim" },
+            cmdline = { pattern = "^:", icon = "", lang = "zsh" },
             search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
             search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" },
-            filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },
+            filter = { pattern = "^:%s*!", icon = "$", lang = "zsh" },
             lua = { pattern = { "^:%s*lua%s+", "^:%s*lua%s*=%s*", "^:%s*=%s*" }, icon = "", lang = "lua" },
             help = { pattern = "^:%s*he?l?p?%s+", icon = "" },
             input = { view = "cmdline_input", icon = "󰥻 " }, -- Used by input()
@@ -142,7 +142,7 @@ return require('packer').startup(function(use)
         popupmenu = {
           enabled = true,  -- enables the Noice popupmenu UI
           ---@type 'nui'|'cmp'
-          backend = "nui", -- backend to use to show regular cmdline completions
+          backend = "cmp", -- backend to use to show regular cmdline completions
           ---@type NoicePopupmenuItemKind|false
           -- Icons for completion item kinds (see defaults at noice.config.icons.kinds)
           kind_icons = {}, -- set to `false` to disable icons

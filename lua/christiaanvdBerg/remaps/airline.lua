@@ -1,3 +1,7 @@
+vim.keymap.set("n", "<C-n>", function()
+  vim.cmd("bn")
+end, { silent = true })
+
 vim.keymap.set("n", "<C-n>", ":bn<CR>")
 vim.keymap.set("v", "<C-n>", ":bn<CR>")
 
