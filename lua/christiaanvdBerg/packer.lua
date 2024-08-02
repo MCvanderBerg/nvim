@@ -47,10 +47,8 @@ return require('packer').startup(function(use)
     }
   }
   use {
-    'vim-airline/vim-airline'
-  }
-  use {
-    'vim-airline/vim-airline-themes'
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
   use({
     "kdheepak/lazygit.nvim",
@@ -67,13 +65,40 @@ return require('packer').startup(function(use)
   use {
     'nvimdev/dashboard-nvim',
     event = 'VimEnter',
-    config = function()
-      require('dashboard').setup {
-        theme = 'hyper', --  theme is doom and hyper default is hyper
-      }
-    end,
-    requires = { 'nvim-tree/nvim-web-devicons' }
+    requires = { 'nvim-tree/nvim-web-devicons' },
+    config = {
+      theme = 'hyper',
+      config = {
+        week_header = {
+          enable = true,
+        },
+        shortcut = {
+          { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
+          {
+            icon = ' ',
+            icon_hl = '@variable',
+            desc = 'Files',
+            group = 'Label',
+            action = 'Telescope find_files',
+            key = 'f',
+          },
+          {
+            desc = ' Apps',
+            group = 'DiagnosticHint',
+            action = 'Telescope app',
+            key = 'a',
+          },
+          {
+            desc = ' dotfiles',
+            group = 'Number',
+            action = 'Telescope dotfiles',
+            key = 'd',
+          },
+        },
+      },
+    }
   }
+
   use {
     "folke/noice.nvim",
     event = "BufRead",
