@@ -35,9 +35,19 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = { 'mode' },
-    lualine_b = { 'branch', 'diff' },
-    lualine_c = { 'filename' },
-    lualine_x = { { timeTillWedding } },
+    lualine_c = { 'branch', 'diff' },
+    lualine_b = { 'buffers' },
+    lualine_x = { { timeTillWedding }, {
+      'datetime',
+      -- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
+      style = ' || %H:%M:%S'
+
+    }, {
+      'datetime',
+      -- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
+      style = '|| %d:%B:%Y'
+
+    } },
     lualine_y = { 'progress' },
     lualine_z = { 'location' }
   },
@@ -45,27 +55,12 @@ require('lualine').setup {
     lualine_a = {},
     lualine_b = {},
     lualine_c = { 'filename' },
-    lualine_x = { 'location' },
-    lualine_y = {},
+    lualine_x = { 'filetype' },
+    lualine_y = { 'location' },
     lualine_z = {}
   },
   winbar = {
-    lualine_a = { 'buffers' },
-    lualine_x = { 'filetype' },
-    lualine_y = { {
-      'datetime',
-      -- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
-      style = '%H:%M:%S'
-
-    } },
-    lualine_z = { {
-      'datetime',
-      -- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
-      style = '%d %B %Y'
-    } }
-  },
-  inactive_winbar = {
-    lualine_a = { 'filename' },
+    lualine_z = { "Hello" }
   },
   extensions = {
     'nvim-tree'
