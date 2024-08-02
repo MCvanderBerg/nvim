@@ -49,7 +49,7 @@ require('lualine').setup {
     lualine_y = {},
     lualine_z = {}
   },
-  tabline = {
+  winbar = {
     lualine_a = { 'buffers' },
     lualine_x = { 'filetype' },
     lualine_y = { {
@@ -63,5 +63,11 @@ require('lualine').setup {
       -- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
       style = '%d %B %Y'
     } }
-  }
+  },
+  inactive_winbar = {
+    lualine_a = { 'filename' },
+  },
+  extensions = {
+    'nvim-tree'
+  },
 }
