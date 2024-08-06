@@ -14,12 +14,7 @@ end
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = '16color',
-    component_separators = { left = '', right = '' },
-    section_separators = { left = '', right = '' },
-
-    --    component_separators = { left = '', right = '' },
-    --    section_separators = { left = '', right = '' },
+    theme = 'base16',
     disabled_filetypes = {
       statusline = {},
       winbar = {},
@@ -33,21 +28,24 @@ require('lualine').setup {
       winbar = 1000,
     }
   },
-  sections = {
+  tabline = {
     lualine_a = { 'mode' },
-    lualine_c = { 'branch', 'diff' },
     lualine_b = { 'buffers' },
     lualine_x = { { timeTillWedding }, {
       'datetime',
       -- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
-      style = ' || %H:%M:%S'
+      style = '%H:%M:%S'
 
     }, {
       'datetime',
       -- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
-      style = '|| %d:%B:%Y'
+      style = '%d:%B:%Y'
 
     } },
+  },
+  sections = {
+    lualine_a = { 'mode' },
+    lualine_b = { 'branch', 'diff' },
     lualine_y = { 'progress' },
     lualine_z = { 'location' }
   },
@@ -58,9 +56,6 @@ require('lualine').setup {
     lualine_x = { 'filetype' },
     lualine_y = { 'location' },
     lualine_z = {}
-  },
-  winbar = {
-    lualine_z = { "Hello" }
   },
   extensions = {
     'nvim-tree'
