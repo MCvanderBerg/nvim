@@ -14,7 +14,7 @@ end
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'base16',
+    theme = 'nightfly',
     disabled_filetypes = {
       statusline = {},
       winbar = {},
@@ -31,17 +31,16 @@ require('lualine').setup {
   tabline = {
     lualine_a = { 'mode' },
     lualine_b = { 'buffers' },
-    lualine_x = { { timeTillWedding }, {
-      'datetime',
-      -- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
-      style = '%H:%M:%S'
-
-    }, {
-      'datetime',
-      -- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
-      style = '%d:%B:%Y'
-
-    } },
+    --lualine_x = { { timeTillWedding }, {
+    --  'datetime',
+    --  -- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
+    --  style = '%H:%M:%S'
+    --},
+    --{
+    -- 'datetime',
+    --- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
+    --  style = '%d:%B:%Y'
+    --} },
   },
   sections = {
     lualine_a = { 'mode' },
@@ -50,9 +49,9 @@ require('lualine').setup {
     lualine_z = { 'location' }
   },
   inactive_sections = {
-    lualine_a = {},
+    lualine_c = {},
     lualine_b = {},
-    lualine_c = { 'filename' },
+    lualine_a = { 'filename' },
     lualine_x = { 'filetype' },
     lualine_y = { 'location' },
     lualine_z = {}
