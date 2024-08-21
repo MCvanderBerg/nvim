@@ -39,7 +39,6 @@ return require('packer').startup(function(use)
     requires = {
       { 'williamboman/mason.nvim' },
       { 'williamboman/mason-lspconfig.nvim' },
-
       { 'neovim/nvim-lspconfig' },
       { 'hrsh7th/nvim-cmp' },
       { 'hrsh7th/cmp-nvim-lsp' },
@@ -98,6 +97,15 @@ return require('packer').startup(function(use)
       },
     }
   }
+
+  use {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = function()
+      require("nvim-autopairs").setup {}
+    end
+  }
+
 
   use {
     "folke/noice.nvim",
