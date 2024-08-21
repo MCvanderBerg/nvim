@@ -36,3 +36,11 @@ vim.opt.updatetime = 50
 vim.g.mapleader = " "
 
 vim.api.nvim_buf_set_option(0, 'modifiable', true)
+
+
+-- Enable syntax-based folding
+vim.opt.foldmethod = "syntax"
+vim.opt.foldenable = true   -- Enable folding
+vim.opt.foldlevelstart = 99 -- Open all folds by default
+
+
