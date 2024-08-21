@@ -59,7 +59,8 @@ require('mason-lspconfig').setup({
     'jdtls',
     'tsserver',
     'lua_ls',
-    "clangd",
+    'clangd',
+    'gopls',
   },
   handlers = {
     function(server_name)

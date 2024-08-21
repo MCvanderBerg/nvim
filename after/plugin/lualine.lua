@@ -14,7 +14,7 @@ end
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'nightfly',
+    theme = 'everforest',
     disabled_filetypes = {
       statusline = {},
       winbar = {},

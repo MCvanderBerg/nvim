@@ -12,10 +12,10 @@ return require('packer').startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } },
   }
   use({
-    'folke/tokyonight.nvim',
-    as = 'tokyonight',
+    'rose-pine/neovim',
+    as = 'rose-pine',
     config = function()
-      vim.cmd('colorscheme tokyonight-night')
+      vim.cmd('colorscheme rose-pine')
     end
   })
   use('lewis6991/gitsigns.nvim')

@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-  color = color or "tokyonight-night"
+  color = color or "rose-pine"
   vim.cmd.colorscheme(color)
 
   --  local Telescope_bg = "#18101a"
