@@ -21,13 +21,18 @@ require('telescope').setup {
     sorting_strategy = 'ascending',
     color_devicons = true,
   },
+  picker = {
+    find_files = {
+      hidden = true
+    }
+  }
 }
 
 
 
 --find in file directory
 vim.keymap.set('n', '<leader>O', function()
-  builtin.find_files()
+  builtin.find_files({ hidden = true })
 end
 , {})
 vim.keymap.set('n', '<leader>o', builtin.buffers, {})
