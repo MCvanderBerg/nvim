@@ -49,7 +49,7 @@ vim.keymap.set('t', '<leader>t', [[<C-\><C-n>:lua send_exit_to_terminal()<CR>]],
 
 vim.keymap.set("n", "<leader>tl", function() toggle_terminal("horizontal") end)
 vim.keymap.set('t', '<leader>t', [[<C-\><C-n>:lua send_exit_to_terminal()<CR>]], { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>pv", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>vp", ":NvimTreeToggle<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -64,9 +64,9 @@ vim.keymap.set("n", "<leader>vwm", function()
   require("vim-with-me").StartVimWithMe()
 end)
 
-vim.keymap.set("n", "<leader>swm", function()
-  require("vim-with-me").StopVimWithMe()
-end)
+-- vim.keymap.set("n", "<leader>swm", function()
+--   require("vim-with-me").StopVimWithMe()
+-- end)
 
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
@@ -87,7 +87,7 @@ vim.api.nvim_set_keymap('i', '<S-Tab>', '<C-d>', { noremap = true, silent = true
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
-vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+vim.keymap.set("n", "<leader>S", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 

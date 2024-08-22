@@ -1,4 +1,8 @@
-require("harpoon").setup({
+local harpoon = require("harpoon")
+
+
+-- REQUIRED
+harpoon:setup({
   global_settings = {
     -- sets the marks upon calling `toggle` on the ui, instead of require `:w`.
     save_on_toggle = false,
@@ -24,17 +28,23 @@ require("harpoon").setup({
     tabline_suffix = "   ",
   }
 })
-local mark = require("harpoon.mark")
-local ui = require("harpoon.ui")
+-- REQUIRED
 
-vim.keymap.set("n", "<leader>a", mark.add_file)
-vim.keymap.set("n", "<leader>e", ui.toggle_quick_menu)
-
-vim.keymap.set("n", "<leader>n", function() ui.nav_next() end);
-vim.keymap.set("n", "<leader>p", function() ui.nav_prev() end);
-
-
-vim.keymap.set("n", "<leader>n", function() ui.nav_file(1) end);
-vim.keymap.set("n", "<leader>m", function() ui.nav_file(2) end);
-vim.keymap.set("n", "<leader>,", function() ui.nav_file(3) end);
-vim.keymap.set("n", "<leader>.", function() ui.nav_file(4) end);
+vim.keymap.set("n", "<leader>A", function() harpoon:list():add() end)
+vim.keymap.set("n", "<leader>e", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+vim.keymap.set("n", "<leader>n", function() harpoon:list():next() end);
+vim.keymap.set("n", "<leader>p", function() harpoon:list():prev() end);
+vim.keymap.set("n", "<leader>a", function()
+  -- local harpoon_file_path = harpoon:list():get(1).value
+  -- print(vim.fn.fnamemodify(harpoon_file_path, ':t'))
+  harpoon:list():select(1)
+end);
+vim.keymap.set("n", "<leader>s", function()
+  harpoon:list():select(2)
+end);
+vim.keymap.set("n", "<leader>d", function()
+  harpoon:list():select(3)
+end);
+vim.keymap.set("n", "<leader>f", function()
+  harpoon:list():select(4)
+end);

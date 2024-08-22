@@ -21,7 +21,11 @@ return require('packer').startup(function(use)
   use('lewis6991/gitsigns.nvim')
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('nvim-treesitter/playground')
-  use('ThePrimeagen/harpoon')
+  use({
+    'ThePrimeagen/harpoon',
+    branch = 'harpoon2',
+    requires = { { "nvim-lua/plenary.nvim" } }
+  })
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
 
@@ -99,6 +103,13 @@ return require('packer').startup(function(use)
   }
 
   use {
+    'letieu/harpoon-lualine',
+    opt = false,
+    requires = { { 'ThePrimeagen/harpoon', branch = 'harpoon2' } }
+  }
+
+
+  use {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
     config = function()
@@ -141,7 +152,7 @@ return require('packer').startup(function(use)
         messages = {
           -- NOTE: If you enable messages, then the cmdline is enabled automatically.
           -- This is a current Neovim limitation.
-          enabled = true,              -- enables the Noice messages UI
+          enabled = false,             -- enables the Noice messages UI
           view = "notify",             -- default view for messages
           view_error = "notify",       -- view for errors
           view_warn = "notify",        -- view for warnings

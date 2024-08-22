@@ -37,18 +37,17 @@ end
 , {})
 vim.keymap.set('n', '<leader>o', builtin.buffers, {})
 vim.api.nvim_set_keymap('n', '<leader>F', ':Telescope live_grep<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>f', function()
-  builtin.current_buffer_fuzzy_find({
-    theme = "cursor",  -- Change to "ivy" or "cursor" if needed
-    previewer = false, -- Disable previewer if not needed
-    layout_config = {
-      width = 0.5,     -- Adjust the width of the window (value between 0 and 1)
-      height = 0.5,    -- Adjust the height of the window (value between 0 and 1)
-    },
-  })
-end)
-vim.keymap.set('n', '<leader>fx', builtin.grep_string, {})
-
+-- vim.keymap.set('n', '<leader>f', function()
+--   builtin.current_buffer_fuzzy_find({
+--     theme = "cursor",  -- Change to "ivy" or "cursor" if needed
+--     previewer = false, -- Disable previewer if not needed
+--     layout_config = {
+--       width = 0.5,     -- Adjust the width of the window (value between 0 and 1)
+--       height = 0.5,    -- Adjust the height of the window (value between 0 and 1)
+--     },
+--   })
+-- end)
+--
 --find git git_files
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
