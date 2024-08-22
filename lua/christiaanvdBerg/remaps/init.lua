@@ -128,3 +128,8 @@ vim.keymap.set("n", "<C-h>", function() check_or_open_window("h") end)
 vim.keymap.set("n", "<C-k>", function() check_or_open_window("k") end)
 vim.keymap.set("n", "<C-l>", function() check_or_open_window("l") end)
 vim.keymap.set("n", "<C-j>", function() check_or_open_window("j") end)
+
+vim.keymap.set("i", "<C-h>", '<Left>', { noremap = true })
+vim.keymap.set("i", "<C-l>", '<Right>', { noremap = true })
+vim.keymap.set("i", "<C-j>", '<Down>', { noremap = true })
+vim.keymap.set("i", "<C-k>", '<Up>', { noremap = true })

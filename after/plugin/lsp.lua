@@ -3,12 +3,13 @@ local cmp = require('cmp')
 local luasnip = require('luasnip')
 
 local function cmdline_mappings(select)
-  print(select)
   return {
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-j>'] = cmp.mapping.select_next_item(),
+    ['<Tab>'] = cmp.mapping.select_next_item(),
     ['<C-k>'] = cmp.mapping.select_prev_item(),
+    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.close(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
@@ -88,5 +89,4 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
   vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-  vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)

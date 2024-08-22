@@ -32,3 +32,9 @@ vim.keymap.set("n", "<leader>e", ui.toggle_quick_menu)
 
 vim.keymap.set("n", "<leader>n", function() ui.nav_next() end);
 vim.keymap.set("n", "<leader>p", function() ui.nav_prev() end);
+
+
+vim.keymap.set("n", "<leader>n", function() ui.nav_file(1) end);
+vim.keymap.set("n", "<leader>m", function() ui.nav_file(2) end);
+vim.keymap.set("n", "<leader>,", function() ui.nav_file(3) end);
+vim.keymap.set("n", "<leader>.", function() ui.nav_file(4) end);
