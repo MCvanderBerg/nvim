@@ -31,12 +31,11 @@ harpoon:setup({
 -- REQUIRED
 
 vim.keymap.set("n", "<leader>A", function() harpoon:list():add() end)
+vim.keymap.set("n", "<leader>D", function() harpoon:list():remove() end)
 vim.keymap.set("n", "<leader>e", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 vim.keymap.set("n", "<leader>n", function() harpoon:list():next() end);
 vim.keymap.set("n", "<leader>p", function() harpoon:list():prev() end);
 vim.keymap.set("n", "<leader>a", function()
-  -- local harpoon_file_path = harpoon:list():get(1).value
-  -- print(vim.fn.fnamemodify(harpoon_file_path, ':t'))
   harpoon:list():select(1)
 end);
 vim.keymap.set("n", "<leader>s", function()

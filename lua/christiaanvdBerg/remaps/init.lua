@@ -133,3 +133,20 @@ vim.keymap.set("i", "<C-h>", '<Left>', { noremap = true })
 vim.keymap.set("i", "<C-l>", '<Right>', { noremap = true })
 vim.keymap.set("i", "<C-j>", '<Down>', { noremap = true })
 vim.keymap.set("i", "<C-k>", '<Up>', { noremap = true })
+
+--Airline remaps
+vim.keymap.set("n", "<C-n>", function()
+  vim.cmd("bn")
+end, { silent = true })
+
+vim.keymap.set("n", "<C-n>", ":bn<CR>")
+vim.keymap.set("v", "<C-n>", ":bn<CR>")
+
+vim.keymap.set("n", "<C-p>", ":bp<CR>")
+vim.keymap.set("v", "<C-p>", ":bp<CR>")
+
+vim.keymap.set("n", "<leader>cw", ":close<CR>")
+vim.keymap.set("v", "<leader>cw", ":close<CR>")
+
+vim.keymap.set("n", "<leader>cb", ":bd<CR>")
+vim.keymap.set("v", "<leader>cb", ":bd<CR>")

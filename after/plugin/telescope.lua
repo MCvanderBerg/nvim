@@ -49,9 +49,12 @@ vim.api.nvim_set_keymap('n', '<leader>F', ':Telescope live_grep<CR>', { noremap 
 -- end)
 --
 --find git git_files
+
+
+
+
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
 vim.keymap.set('n', '<leader>gs', builtin.git_stash, {})
-vim.keymap.set('n', '<leader><leader>gc', builtin.git_status, {})
-vim.keymap.set('n', '<leader><leader>gl', builtin.git_bcommits, {})
+vim.keymap.set('n', '<leader>gc', builtin.git_status, {})
 vim.keymap.set('n', '<leader>gl', builtin.git_commits, {})
