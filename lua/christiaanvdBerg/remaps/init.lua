@@ -125,7 +125,7 @@ end
 
 --My personal keymaps
 vim.keymap.set("n", "<C-h>", function() check_or_open_window("h") end)
-vim.keymap.set("n", "<C-k>", function() check_or_open_window("k") end)
+vim.keymap.set("n", "<C-l>", function() check_or_open_window("l") end)
 
 vim.api.nvim_set_keymap("n", "<C-j>", "10j", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-k>", "10k", { noremap = true, silent = true })
