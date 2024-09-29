@@ -17,8 +17,21 @@ local function cmdline_mappings(select)
 end
 
 cmp.setup({
-  completion = {
-    native_menu = false,
+  window = {
+    completion = {
+      border = 'rounded', -- Set border style
+      winhighlight = 'Normal:Normal,FloatBorder:NONE,CursorLine:Visual,Search:Search',
+    },
+    documentation = {
+      border = 'rounded',
+    }
+  },
+  formatting = {
+    format = function(entry, vim_item)
+      -- Customize the format of the items in the menu
+      vim_item.kind = string.format('%s', vim_item.kind)
+      return vim_item
+    end,
   },
   snippet = {
     expand = function(args)
@@ -58,10 +71,9 @@ require('mason-lspconfig').setup({
   ensure_installed = {
     'kotlin_language_server',
     'jdtls',
-    'tsserver',
+    'biome',
     'lua_ls',
     'clangd',
-    'gopls',
   },
   handlers = {
     function(server_name)

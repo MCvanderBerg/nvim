@@ -28,6 +28,9 @@ function ColorMyPencils(color)
   vim.api.nvim_set_hl(0, 'TelescopePromptTitle', { bg = Telescope_bg, fg = Telescope_fg })
   vim.api.nvim_set_hl(0, 'TelescopeResultsTitle', { bg = Telescope_bg, fg = Telescope_fg })
   vim.api.nvim_set_hl(0, 'TelescopePreviewTitle', { bg = Telescope_bg, fg = Telescope_fg })
+
+  -- Set Pmenu color, this includes popmenus like the auto-completion menu
+  vim.cmd('highlight Pmenu guibg=Telescope_bg guifg=Telescope_fg ctermbg=235 ctermfg=white')
 end
 
 ColorMyPencils()
