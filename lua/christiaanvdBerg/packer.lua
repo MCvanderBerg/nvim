@@ -18,6 +18,9 @@ return require('packer').startup(function(use)
       vim.cmd('colorscheme rose-pine')
     end
   })
+  use({
+    "christoomey/vim-tmux-navigator",
+  })
   use('lewis6991/gitsigns.nvim')
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('nvim-treesitter/playground')

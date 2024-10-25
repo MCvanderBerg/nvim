@@ -1,6 +1,7 @@
 require("christiaanvdBerg.remaps.terminal")
 require("christiaanvdBerg.remaps.airline")
-require("christiaanvdBerg.remaps.airline")
+local Table = require("christiaanvdBerg.utils.table")
+
 vim.g.mapleader = " "
 
 vim.g.mapleader = " "
@@ -20,7 +21,6 @@ local function toggle_terminal(split)
       return
     end
   end
-
   -- If no terminal is found, open a new one at the bottom and enter insert mode
   if split == "vertical" then
     vim.cmd('belowright split | resize 10 | terminal')
@@ -78,8 +78,8 @@ vim.keymap.set("v", "<leader>d", "\"+d")
 
 vim.keymap.set("i", "<C-c>", function()
   vim.lsp.buf.format()
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", true)
   vim.cmd("w")
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", true)
 end)
 
 vim.api.nvim_set_keymap('i', '<S-Tab>', '<C-d>', { noremap = true, silent = true })
@@ -90,42 +90,59 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>S", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
+local cases = {
+  ["h"] = function()
+    vim.cmd("leftabove vsplit")
+  end,
+  ["l"] = function()
+    vim.cmd("rightbelow vsplit")
+  end,
+  ["j"] = function()
+    vim.cmd("split")
+    vim.cmd("wincmd j")
+  end,
+  ["k"] = function()
+    vim.cmd("split")
+  end,
+  ["h"] = function()
+    vim.cmd("leftabove vsplit")
+  end,
+}
 
-local function check_or_open_window(direction)
+local function check_or_open_window()
+  local direction = vim.fn.getcharstr()
+  local dirByteCode = string.byte(direction)
+
+  print(direction, ": ", dirByteCode)
+  if dirByteCode == 8 then
+    direction = "h"
+  elseif dirByteCode == 12 then
+    direction = "l"
+  elseif dirByteCode == 11 then
+    direction = "k"
+  elseif dirByteCode == 10 then
+    direction = "j"
+  end
+  print(direction)
+
+  if not Table:hasKey(cases, direction) then return end
+
   local prev_window_id = vim.api.nvim_get_current_win()
-  local has_window = false
-  local win_direction = vim.fn.winnr(direction)
-
   vim.cmd("wincmd " .. direction)
-
   local current_window_id = vim.api.nvim_get_current_win()
 
   if current_window_id == prev_window_id then
-    local cases = {
-      ["h"] = function()
-        vim.cmd("leftabove vsplit")
-      end,
-      ["l"] = function()
-        vim.cmd("rightbelow vsplit")
-      end,
-      ["j"] = function()
-        vim.cmd("split")
-        vim.cmd("wincmd j")
-      end,
-      ["k"] = function()
-        vim.cmd("split")
-      end,
-    }
-    local case = cases[direction]
-    case()
+    cases[direction]()
+    return
   end
 end
 
 
 
 --My personal keymaps
-vim.keymap.set("n", "<C-h>", function() check_or_open_window("h") end)
-vim.keymap.set("n", "<C-l>", function() check_or_open_window("l") end)
+vim.keymap.set("n", "<C-w>", function()
+  check_or_open_window()
+end)
 
 vim.api.nvim_set_keymap("n", "<C-j>", "10j", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-k>", "10k", { noremap = true, silent = true })
