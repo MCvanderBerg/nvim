@@ -168,3 +168,5 @@ vim.keymap.set("v", "<leader>cw", ":close<CR>")
 
 vim.keymap.set("n", "<leader>cb", ":bd<CR>")
 vim.keymap.set("v", "<leader>cb", ":bd<CR>")
+
+vim.keymap.set("n", "<leader><leader>", ":b#<CR>")

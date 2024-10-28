@@ -77,7 +77,18 @@ require('mason-lspconfig').setup({
   },
   handlers = {
     function(server_name)
-      require('lspconfig')[server_name].setup({})
+      local setup = {}
+      if (server_name == 'lua_ls') then
+        setup = {
+          settings = {
+            diagnostics = {
+              globals = { 'vim' }
+            }
+          }
+        }
+        return
+      end
+      require('lspconfig')[server_name].setup(setup)
     end,
   },
 })
