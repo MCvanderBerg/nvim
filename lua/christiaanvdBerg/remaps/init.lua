@@ -82,7 +82,7 @@ vim.keymap.set("i", "<C-c>", function()
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", true)
 end)
 
-vim.api.nvim_set_keymap('i', '<S-Tab>', '<C-d>', { noremap = true, silent = true })
+vim.keymap.set('i', '<S-Tab>', '<C-d>', { noremap = true, silent = true })
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
@@ -106,6 +106,9 @@ local cases = {
   end,
   ["h"] = function()
     vim.cmd("leftabove vsplit")
+  end,
+  ["o"] = function()
+    vim.cmd("") 
   end,
 }
 
@@ -144,8 +147,8 @@ vim.keymap.set("n", "<C-w>", function()
   check_or_open_window()
 end)
 
-vim.api.nvim_set_keymap("n", "<C-j>", "10j", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-k>", "10k", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-j>", "10j", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-k>", "10k", { noremap = true, silent = true })
 
 vim.keymap.set("i", "<C-h>", '<Left>', { noremap = true })
 vim.keymap.set("i", "<C-l>", '<Right>', { noremap = true })

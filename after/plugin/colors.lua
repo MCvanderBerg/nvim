@@ -1,9 +1,8 @@
-function ColorMyPencils(color)
 	color = color or "rose-pine"
 	vim.cmd.colorscheme(color)
-
-	--  local Telescope_bg = "#18101a"
-	--  local Telescope_fg = "#e0def4"
+  
+	local Telescope_bg = "#18101a"
+	local Telescope_fg = "#e0def4"
 
 	-- vim.api.nvim_set_hl(0, "Normal", { bg = Telescope_bg, fg = Telescope_fg })
 	-- vim.api.nvim_set_hl(0, "CursorLine", { bg = Telescope_bg, fg = Telescope_fg })
@@ -30,7 +29,5 @@ function ColorMyPencils(color)
 	-- vim.api.nvim_set_hl(0, 'TelescopePreviewTitle', { bg = Telescope_bg, fg = Telescope_fg })
 	--
 	-- -- Set Pmenu color, this includes popmenus like the auto-completion menu
-	-- vim.cmd('highlight Pmenu guibg=Telescope_bg guifg=Telescope_fg ctermbg=235 ctermfg=white')
-end
+	 vim.cmd('highlight Pmenu guibg=Telescope_bg guifg=Telescope_fg ctermbg=235 ctermfg=white')
 
-ColorMyPencils()
