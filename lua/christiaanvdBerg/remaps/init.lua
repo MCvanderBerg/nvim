@@ -132,11 +132,18 @@ local function check_or_open_window()
 
   local prev_window_id = vim.api.nvim_get_current_win()
   vim.cmd("wincmd " .. direction)
-  local current_window_id = vim.api.nvim_get_current_win()
+  local current_window_id = vim.api.nvim_get_current_win() local last_buffer = vim.fn.bufnr('#')
 
   if current_window_id == prev_window_id then
-    cases[direction]()
-    return
+    if last_buffer == -1 or direction == "o" then
+      cases[direction]()
+      return
+    end
+
+  cases[direction]()
+  vim.cmd(":b#")
+
+    
   end
 end
 
