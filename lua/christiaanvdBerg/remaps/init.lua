@@ -147,8 +147,6 @@ vim.keymap.set("n", "<C-w>", function()
   check_or_open_window()
 end)
 
-vim.keymap.set("n", "<C-j>", "10j", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-k>", "10k", { noremap = true, silent = true })
 
 vim.keymap.set("i", "<C-h>", '<Left>', { noremap = true })
 vim.keymap.set("i", "<C-l>", '<Right>', { noremap = true })
