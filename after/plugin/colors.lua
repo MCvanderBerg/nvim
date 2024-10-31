@@ -1,18 +1,21 @@
-	color = color or "tokyonight"
+	color = "tokyonight-night"
 	vim.cmd.colorscheme(color)
   
 	local Telescope_bg = "#18101a"
 	local Telescope_fg = "#e0def4"
 
-	-- vim.api.nvim_set_hl(0, "Normal", { bg = Telescope_bg, fg = Telescope_fg })
-	-- vim.api.nvim_set_hl(0, "CursorLine", { bg = Telescope_bg, fg = Telescope_fg })
 	-- vim.api.nvim_set_hl(0, "CursorColumn", { bg = Telescope_bg, fg = Telescope_fg })
 	-- vim.api.nvim_set_hl(0, "TabLine", { bg = Telescope_bg, fg = Telescope_fg })
 	-- vim.api.nvim_set_hl(0, "SignColumn", { bg = Telescope_bg, fg = Telescope_fg })
 	-- vim.api.nvim_set_hl(0, "CursorColumn", { bg = Telescope_bg, fg = Telescope_fg })
 	-- vim.api.nvim_set_hl(0, "StatusLineNC", { bg = Telescope_bg, fg = Telescope_fg })
-	-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = Telescope_bg, fg = Telescope_fg })
-	vim.api.nvim_set_hl(0, "NormalNC", { bg = none, fg = none })
+  -- vim.api.nvim_set_hl(0, "CursorLine", { bg = white, fg = none })
+  -- vim.api.nvim_set_hl(0, "StatusLine", { bg = Telescope_bg, fg = none })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = white, fg = white })
+  vim.api.nvim_set_hl(0, "Normal", { bg = Telescope_bg, fg = none })
+  vim.api.nvim_set_hl(0, "WinSeparator", { fg = "grey", bg = none }) -- Change fg color as desired
+
+
 	--
 	-- -- Set Telescope highlights to match Rose Pine theme
 	-- vim.api.nvim_set_hl(0, 'TelescopeBorder', { bg = Telescope_bg, fg = Telescope_fg })

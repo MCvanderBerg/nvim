@@ -15,10 +15,6 @@ return require('packer').startup(function(use)
   --   'rose-pine/neovim',
   --   as = 'rose-pine',
   -- })
-   use({
-    'folke/tokyonight.nvim',
-    as = 'tokyonight',
-  })
 
   use({
     "christoomey/vim-tmux-navigator",
@@ -124,6 +120,10 @@ return require('packer').startup(function(use)
 
   use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
+  use {
+    'folke/tokyonight.nvim',
+    as = 'tokyonight',
+  }
   use {
     "folke/noice.nvim",
     event = "BufRead",

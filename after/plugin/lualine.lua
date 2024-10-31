@@ -105,9 +105,9 @@ function Harpoon_files()
 
     label = label ~= "" and label or "(empty)"
     if current_file_path == harpoon_file_path then
-      contents[index] = string.format("%%#HarpoonActive# [ %s  %s ] ", string.upper(shortcutMap[index]), label)
+      contents[index] = string.format("%%#HarpoonActive# [%s %s]", string.upper(shortcutMap[index]), label)
     else
-      contents[index] = string.format("%%#HarpoonInactive# %s %s ", string.lower(shortcutMap[index]), label)
+      contents[index] = string.format("%%#HarpoonInactive# %s %s", string.lower(shortcutMap[index]), label)
     end
   end
 
