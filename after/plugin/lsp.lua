@@ -69,7 +69,7 @@ cmp.setup.cmdline(':', {
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {
-    'ast_grep',
+--   'kotlin-language-server', --kotlin
     'jdtls',
     'biome',
     'lua_ls',
