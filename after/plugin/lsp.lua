@@ -74,6 +74,7 @@ require('mason-lspconfig').setup({
     'biome',
     'lua_ls',
     'clangd',
+    'zls',
   },
   handlers = {
     function(server_name)
