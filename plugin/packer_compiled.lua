@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/christiaanvanderberg/.cache/nvim/packer_hererocks/2.1.1720049189/share/lua/5.1/?.lua;/Users/christiaanvanderberg/.cache/nvim/packer_hererocks/2.1.1720049189/share/lua/5.1/?/init.lua;/Users/christiaanvanderberg/.cache/nvim/packer_hererocks/2.1.1720049189/lib/luarocks/rocks-5.1/?.lua;/Users/christiaanvanderberg/.cache/nvim/packer_hererocks/2.1.1720049189/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/christiaanvanderberg/.cache/nvim/packer_hererocks/2.1.1720049189/lib/lua/5.1/?.so"
+local package_path_str = "/Users/christiaanvanderberg/.cache/nvim/packer_hererocks/2.1.1748459687/share/lua/5.1/?.lua;/Users/christiaanvanderberg/.cache/nvim/packer_hererocks/2.1.1748459687/share/lua/5.1/?/init.lua;/Users/christiaanvanderberg/.cache/nvim/packer_hererocks/2.1.1748459687/lib/luarocks/rocks-5.1/?.lua;/Users/christiaanvanderberg/.cache/nvim/packer_hererocks/2.1.1748459687/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/christiaanvanderberg/.cache/nvim/packer_hererocks/2.1.1748459687/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -103,44 +103,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/christiaanvanderberg/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
-  },
-  ["dashboard-nvim"] = {
-    config = {
-      config = {
-        shortcut = { {
-            action = "Lazy update",
-            desc = "󰊳 Update",
-            group = "@property",
-            key = "u"
-          }, {
-            action = "Telescope find_files",
-            desc = "Files",
-            group = "Label",
-            icon = " ",
-            icon_hl = "@variable",
-            key = "f"
-          }, {
-            action = "Telescope app",
-            desc = " Apps",
-            group = "DiagnosticHint",
-            key = "a"
-          }, {
-            action = "Telescope dotfiles",
-            desc = " dotfiles",
-            group = "Number",
-            key = "d"
-          } },
-        week_header = {
-          enable = true
-        }
-      },
-      theme = "hyper"
-    },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/Users/christiaanvanderberg/.local/share/nvim/site/pack/packer/opt/dashboard-nvim",
-    url = "https://github.com/nvimdev/dashboard-nvim"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
@@ -278,7 +240,6 @@ vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'dashboard-nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 
